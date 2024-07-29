@@ -3,10 +3,10 @@ import Navbar from './components/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Posts from './pages/Posts/Posts';
-import Users from './pages/Users';
+import Users from './pages/Users/Users';
 import { Provider } from 'react-redux';
 import store from './storage/store';
-import Products from './pages/Products';
+import Products from './pages/Products/Products';
 
 const App = () => {
   return (

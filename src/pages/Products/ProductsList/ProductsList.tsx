@@ -1,8 +1,8 @@
 import Pagination from "../../../components/Pagination"
 import { ProductsDataInterface } from "../../../storage/slices/productsSlice"
-import { ProductsListStyled } from "./index.style"
-import Product from "./Product"
-import Skeleton from "./Skeleton"
+import { ProductsListStyled } from "./ProductsList.style"
+import Product from "./Product/Product"
+import Skeleton from "./Skeleton/Skeleton"
 
 interface ProductsListInterface {
   data: ProductsDataInterface[],

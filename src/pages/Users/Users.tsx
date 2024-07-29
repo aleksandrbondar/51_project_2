@@ -1,13 +1,13 @@
 import { ContainerStyled } from '../../styles/GlobalStyles';
-import { UsersStyled } from './index.style';
+import { UsersStyled } from './Users.style';
 import { RootState } from '../../storage/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { usersStorageOptions } from '../../storage/slices/usersSlice';
 const { getData } = usersStorageOptions
 import LoadingStatus from '../../components/LoadingStatus';
-import UserList from './UsersLists';
-import Skeleton from './Skeleton';
+import UserList from './UsersLists/UsersLists';
+import Skeleton from './Skeleton/Skeleton';
 
 const Users = () => {
   const { data, loadStatus } = useSelector((state: RootState) => state.usersStorage);

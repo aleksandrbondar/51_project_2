@@ -1,12 +1,12 @@
 import { ContainerStyled } from '../../styles/GlobalStyles'
-import { ItemStyled } from './index.style'
+import { ItemStyled } from './Products.style'
 import { RootState } from '../../storage/store'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { productsStorageOptions } from '../../storage/slices/productsSlice'
 const { getDataSize, setPage, getData } = productsStorageOptions
 import LoadingStatus from '../../components/LoadingStatus'
-import ProductsList from './ProductsList'
+import ProductsList from './ProductsList/ProductsList'
 
 const Products = () => {
   const { data, loadStatus, limit, dataSize, page } = useSelector((state: RootState) => state.productsStorage);
