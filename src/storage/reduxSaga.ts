@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { put, takeEvery, all, select, call, PutEffect } from "redux-saga/effects";
+import { put, takeEvery, all, call } from "redux-saga/effects";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { RootState } from "./store";
 
 // Slice methods and options-------------------------------------------------------------------------------
 import { UsersOptionsInterface, usersStorageOptions } from "./slices/usersSlice";
@@ -42,7 +41,6 @@ function* fetchDataLength(options: FetchWithOptionsInterface) {
     }
   }
 }
-
 
 function* fetchData({ url, fetchParams }: FetchParamsInterface) {
   const cancelTokenSource = axios.CancelToken.source();
