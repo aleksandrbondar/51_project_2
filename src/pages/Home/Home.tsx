@@ -12,11 +12,9 @@ const Home = () => {
 
   useEffect(() => {
     Promise.all([imgPromise(imgUrl)])
-      .then(() => console.log('img loaded'))
       .then(() => setTimeout(() => {
         dispatch(setImgLoadStatus(true))
-        console.log('dispatch')
-      }, 5000))
+      }, 500))
       .catch(error => console.error('Failed to load images', error));
   }, [imgUrl, dispatch]);
 
