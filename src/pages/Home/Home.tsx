@@ -14,7 +14,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   Promise.all([imgPromise(imgUrl)])
-    .then(() => dispatch(setImgLoadStatus(true)))
+    .then(() => setTimeout(() => dispatch(setImgLoadStatus(true)), 500))
     .catch(error => console.error('Failed to load images', error));
 
   return (
