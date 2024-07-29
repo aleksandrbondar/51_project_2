@@ -1,12 +1,12 @@
 import { AppStyled, SectionStyled } from './styles/GlobalStyles';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Posts from './pages/Posts';
-import Users from './pages/Users';
+import Home from './Pages/Home';
+import Posts from './Pages/Posts';
+import Users from './Pages/Users';
 import { Provider } from 'react-redux';
 import store from './storage/store';
-import Products from './pages/Products';
+import Products from './Pages/Products';
 
 const App = () => {
   return (

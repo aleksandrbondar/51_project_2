@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import hero1 from '../../assets/img/hero-1.jpg';
+import hero2 from '../../assets/img/hero-2.jpg';
+import hero3 from '../../assets/img/hero-3.jpg';
 
 export interface HeroStorageInterface {
   storage: string
@@ -20,9 +23,9 @@ const initialState: HeroStorageInterface = {
   storage: 'heroStateStorage',
   heroState: 'default',
   imgUrl: [
-    '/src/assets/img/hero-1.jpg',
-    '/src/assets/img/hero-2.jpg',
-    '/src/assets/img/hero-3.jpg',
+    `${hero1}`,
+    `${hero2}`,
+    `${hero3}`,
   ],
   allImgLoadStatus: false,
   heroHover: {
