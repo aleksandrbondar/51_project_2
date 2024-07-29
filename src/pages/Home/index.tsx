@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { heroStorageOptions } from '../../storage/slices/heroSlice';
 import { imgPromise } from '../../services/imgPromiseError';
 const { setImgLoadStatus, setHeroState } = heroStorageOptions
+import hero1 from '../../assets/img/hero-1.jpg';
+import hero2 from '../../assets/img/hero-2.jpg';
+import hero3 from '../../assets/img/hero-3.jpg';
 
 
 const Home = () => {
@@ -22,7 +25,7 @@ const Home = () => {
           style={heroHover[heroState].hero1}
           onMouseEnter={() => dispatch(setHeroState('hero1'))}
           onMouseLeave={() => dispatch(setHeroState('default'))}>
-          <HeroItem$1 style={{ backgroundImage: 'url("/src/assets/img/hero-1.jpg")' }}>
+          <HeroItem$1 style={{ backgroundImage: `url(${hero1})` }}>
             <TitleContainer>
               <Title>Our Customers love us</Title>
               <LinkStyled to='/users'>See more</LinkStyled>
@@ -34,7 +37,7 @@ const Home = () => {
           style={heroHover[heroState].hero2}
           onMouseEnter={() => dispatch(setHeroState('hero2'))}
           onMouseLeave={() => dispatch(setHeroState('default'))}>
-          <HeroItem$2 style={{ backgroundImage: 'url("/src/assets/img/hero-2.jpg")' }}>
+          <HeroItem$2 style={{ backgroundImage: `url(${hero2})` }}>
             <TitleContainer>
               <Title>We make asome products</Title>
               <LinkStyled to='/products'>See more</LinkStyled>
@@ -46,7 +49,7 @@ const Home = () => {
           style={heroHover[heroState].hero3}
           onMouseEnter={() => dispatch(setHeroState('hero3'))}
           onMouseLeave={() => dispatch(setHeroState('default'))}>
-          <HeroItem$3 style={{ backgroundImage: 'url("/src/assets/img/hero-3.jpg")' }}>
+          <HeroItem$3 style={{ backgroundImage: `url(${hero3})` }}>
             <TitleContainer>
               <Title>Visit our blog</Title>
               <LinkStyled to='/posts'>See more</LinkStyled>
