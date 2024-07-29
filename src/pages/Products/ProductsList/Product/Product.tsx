@@ -1,5 +1,5 @@
 import { ProductsDataInterface } from "../../../../storage/slices/productsSlice"
-import { IdWrapper, InfoWrapper, ProductCategory, ProductDescription, ProductId, ProductImage, ProductName, ProductPrice, ProductWrapper, Separator } from "./index.style"
+import { IdWrapper, InfoWrapper, ProductCategory, ProductDescription, ProductId, ProductImage, ProductName, ProductPrice, ProductWrapper, Separator } from "./Product.style"
 
 
 const Product = ({ data }: { data: ProductsDataInterface }) => {

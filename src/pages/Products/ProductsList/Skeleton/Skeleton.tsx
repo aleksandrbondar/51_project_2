@@ -1,4 +1,4 @@
-import { IdWrapper, InfoWrapper, ProductDescription, ProductWrapper, Separator } from "../Product/index.style"
+import { IdWrapper, InfoWrapper, ProductDescription, ProductWrapper, Separator } from "../Product/Product.style"
 import { Skeleton as MUISkeleton } from '@mui/material'
 
 const Skeleton = () => {
