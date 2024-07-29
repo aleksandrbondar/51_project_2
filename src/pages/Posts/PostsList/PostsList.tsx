@@ -1,6 +1,6 @@
-import Article from "./Article"
+import Article from "./Article/Article"
 import Pagination from "../../../components/Pagination"
-import { PostsListStyled } from "./index.style"
+import { PostsListStyled } from "./PostsList.style"
 
 interface PostsListInterface {
   data: { title: string; body: string, id: number, img: string }[]

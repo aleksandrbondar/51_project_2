@@ -1,4 +1,4 @@
-import { Hero, HeroWrapper$1, HeroWrapper$2, HeroWrapper$3, HeroItem$1, HeroItem$2, HeroItem$3, TitleContainer, Title, LinkStyled } from './index.style'
+import { Hero, HeroWrapper$1, HeroWrapper$2, HeroWrapper$3, HeroItem$1, HeroItem$2, HeroItem$3, TitleContainer, Title, LinkStyled } from './Home.style'
 import { RootState } from '../../storage/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { heroStorageOptions } from '../../storage/slices/heroSlice';

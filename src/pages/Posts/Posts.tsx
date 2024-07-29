@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useDispatch, useSelector } from 'react-redux';
 import { ContainerStyled } from '../../styles/GlobalStyles';
-import { PostsStyled } from './index.style';
+import { PostsStyled } from './Posts.style';
 import { RootState } from '../../storage/store';
 import { postsStorageOptions } from '../../storage/slices/postsSlice';
 const { setImgLoading, setPostsPage, getData, unmountPosts, getDataSize } = postsStorageOptions
@@ -10,7 +10,7 @@ import LoadingStatus from '../../components/LoadingStatus';
 import LoadScreen from '../../components/LoadScreen';
 import { imgPromise } from '../../services/imgPromiseError';
 import { setScreenLoadingState } from '../../storage/slices/screenLoadingSlice';
-import PostsList from './PostsList';
+import PostsList from './PostsList/PostsList';
 
 const Posts = () => {
   const { data, loadStatus, page, dataSize, imgLoading, limit } = useSelector((state: RootState) => state.postsStorage);
