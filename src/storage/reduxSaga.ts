@@ -26,15 +26,6 @@ export interface FetchParamsInterface {
   url: string,
   fetchParams: AxiosRequestConfig,
 }
-function* selectData(storage: keyof RootState) {
-  const data: object[] = yield select((state: RootState) => state[storage].data);
-  return data;
-}
-
-function* selectDataLength(storage: keyof RootState) {
-  const dataSize: [] = yield select((state: RootState) => state[storage].data);
-  return dataSize.length;
-}
 
 function* fetchDataLength(options: FetchWithOptionsInterface) {
   const { action, url, fetchDataFailure, setDataSize } = options;
@@ -52,10 +43,6 @@ function* fetchDataLength(options: FetchWithOptionsInterface) {
   }
 }
 
-// code from web storm test
-function* fetchDataSave(data: []): Generator<PutEffect<{type: string, payload: []}>, void, unknown> {
-  yield put({ type: 'users/fetchDataSave', payload: data });
-}
 
 function* fetchData({ url, fetchParams }: FetchParamsInterface) {
   const cancelTokenSource = axios.CancelToken.source();
