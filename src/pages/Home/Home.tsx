@@ -3,15 +3,22 @@ import { RootState } from '../../storage/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { heroStorageOptions } from '../../storage/slices/heroSlice';
 import { imgPromise } from '../../services/imgPromiseError';
+import { useEffect } from 'react';
 const { setImgLoadStatus, setHeroState } = heroStorageOptions
 
 const Home = () => {
   const { heroState, heroHover, imgUrl, allImgLoadStatus } = useSelector((state: RootState) => state.heroStateStorage);
   const dispatch = useDispatch();
 
-  Promise.all([imgPromise(imgUrl)])
-    .then(() => setTimeout(() => dispatch(setImgLoadStatus(true)), 500))
-    .catch(error => console.error('Failed to load images', error));
+  useEffect(() => {
+    Promise.all([imgPromise(imgUrl)])
+      .then(() => console.log('img loaded'))
+      .then(() => setTimeout(() => {
+        dispatch(setImgLoadStatus(true))
+        console.log('dispatch')
+      }, 5000))
+      .catch(error => console.error('Failed to load images', error));
+  }, [imgUrl, dispatch]);
 
   return (
     <>
