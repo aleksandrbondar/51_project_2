@@ -28,16 +28,6 @@ export interface FetchParamsInterface {
   fetchParams: AxiosRequestConfig,
 }
 
-function* selectData(storage: keyof RootState) {
-  const data: object[] = yield select((state: RootState) => state[storage].data);
-  return data;
-}
-
-function* selectDataLength(storage: keyof RootState) {
-  const dataSize: [] = yield select((state: RootState) => state[storage].data);
-  return dataSize.length;
-}
-
 function* fetchDataLength(options: FetchWithOptionsInterface) {
   const { action, url, fetchDataFailure, setDataSize } = options;
   const fetchURL = action?.payload?.url ?? url
