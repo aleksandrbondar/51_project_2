@@ -60,7 +60,7 @@ export const postsSlice = createSlice({
     },
     fetchDataFailure(state, action) {
       state.loading = false;
-      state.error = action.payload || 'Failed to fetch posts';
+      state.error = action.payload ?? 'Failed to fetch posts';
       state.loadStatus = "error";
     },
     updateProgress(state, action) {

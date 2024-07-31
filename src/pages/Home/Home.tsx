@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { heroStorageOptions } from '../../storage/slices/heroSlice';
 import { imgPromise } from '../../services/imgPromiseError';
 import { useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 const { setImgLoadStatus, setHeroState } = heroStorageOptions
 
 const Home = () => {
@@ -14,12 +16,37 @@ const Home = () => {
     Promise.all([imgPromise(imgUrl)])
       .then(() => setTimeout(() => {
         dispatch(setImgLoadStatus(true))
+        notify()
       }, 500))
       .catch(error => console.error('Failed to load images', error));
   }, [imgUrl, dispatch]);
 
+  const notify = () => {
+    toast.success('Page loaded', {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  }
   return (
     <>
+      {allImgLoadStatus ? <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      /> : null}
       <Hero style={allImgLoadStatus ? { opacity: 1 } : { opacity: 0 }}>
 
         <HeroWrapper$1

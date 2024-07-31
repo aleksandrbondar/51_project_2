@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { put, takeEvery, all, call } from "redux-saga/effects";
+import { put, takeEvery, all, call, select } from "redux-saga/effects";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 
@@ -7,6 +7,7 @@ import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { UsersOptionsInterface, usersStorageOptions } from "./slices/usersSlice";
 import { ProductsOptionsInterface, productsStorageOptions } from "./slices/productsSlice";
 import { PostsOptionsInterface, postsStorageOptions } from "./slices/postsSlice";
+import { RootState } from "./store";
 
 interface ProductsOptions extends ProductsOptionsInterface {
   action?: ActionInterface | undefined;
@@ -25,6 +26,16 @@ interface ActionInterface {
 export interface FetchParamsInterface {
   url: string,
   fetchParams: AxiosRequestConfig,
+}
+
+function* selectData(storage: keyof RootState) {
+  const data: object[] = yield select((state: RootState) => state[storage].data);
+  return data;
+}
+
+function* selectDataLength(storage: keyof RootState) {
+  const dataSize: [] = yield select((state: RootState) => state[storage].data);
+  return dataSize.length;
 }
 
 function* fetchDataLength(options: FetchWithOptionsInterface) {

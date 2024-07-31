@@ -1,4 +1,6 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { MdDone } from "react-icons/md";
 
 export const LoadScreenStyled = styled.div`
   position: fixed;
@@ -34,4 +36,34 @@ export const LoadScreenStyled = styled.div`
   font-size: 100px;
   color: green;
   }
+`
+
+const loadIcon = `
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  font-size: 100px;
+  transition: all 0.5s;
+  opacity: 0;
+  z-index: 3;
+`
+
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+export const LoadIcon = styled(AiOutlineLoading3Quarters)`
+  ${loadIcon}
+  color: blue;
+  animation: ${spin} 1.2s linear infinite;
+`
+
+export const SuccessIcon = styled(MdDone)`
+  ${loadIcon}
+  color: green;
 `
